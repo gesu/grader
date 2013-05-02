@@ -4,8 +4,8 @@ public class ConcreteRandomGrade implements GradeFunction{
     private int maxGrade;
 
     public ConcreteRandomGrade(int n, int g){
-	this.numClasses = n;
-	this.maxGrade = g;
+		this.numClasses = n;
+		this.maxGrade = g;
     }
 
     /*
@@ -13,7 +13,7 @@ public class ConcreteRandomGrade implements GradeFunction{
      * you get one grade "point"
      */
     public int grade(int classID, int hours){
-	return Math.min(hours, maxGrade);
+    	return Math.min(hours, maxGrade);
     }
 
 }
