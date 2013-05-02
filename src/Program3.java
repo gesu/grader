@@ -19,9 +19,7 @@ public class Program3 implements IProgram3 {
     	this.A = new int[N];
     	fillMatrices();
     	fillReturnArray();
-    	printM(N+1, H);
-    	printK(N+1, H);
-    	System.out.println("A: " + Arrays.toString(A));
+    	System.out.println("Hours: " + Arrays.toString(A));
     	return A;
     }
     
@@ -32,12 +30,12 @@ public class Program3 implements IProgram3 {
     	fillMatrices();
     	fillReturnArray();
     	// A[] has the hours to spend on each class
-    	System.out.println("A: " + Arrays.toString(A));
+    	//System.out.println("A: " + Arrays.toString(A));
     	for(int i=0; i < N; i++){
     		A[i] = F.grade(i, A[i]);
     	}
-    	System.out.println("A: " + Arrays.toString(A));
-    	//printM(N+1, H);
+    	System.out.println("Grade: " + Arrays.toString(A));
+    	printM(N+1, H);
     	//printK(N+1, H);
     	return A;
     	
@@ -67,7 +65,7 @@ public class Program3 implements IProgram3 {
     private void getMax(int i, int j){
     	int tempmax = Integer.MIN_VALUE;
     	int k=0; // k = hours to spend on class i for optimal solution
-    	for(int h=0; h < j+1; h++){
+    	for(int h=0; h < j; h++){
     		int x = F.grade(i-1, h) + M[i-1][j-h];
     		if(x > tempmax){
     			tempmax = x;

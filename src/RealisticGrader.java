@@ -10,6 +10,7 @@ public class RealisticGrader implements GradeFunction{
 
     // three hours for every hour you put in
     public int grade(int classID, int hours){
+    	if(classID == 1) return Math.min(hours, maxGrade);
     	return Math.min(3*hours, maxGrade);
     }
 
